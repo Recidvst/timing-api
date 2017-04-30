@@ -1,26 +1,23 @@
 try {
   $(document).ready(function() {
-    var timingList = '';
+  var loadedDom = false;
+  var timingList = '';
+  var timeFormat = function(x) {
+    var date = new Date(null);
+    date.setSeconds(x / 1000);
+    return date.toISOString().substr(14, 5);
+  }
+  //check dom load
+  if ( window.performance.timing.domComplete > 1 || 1 == 1 ) {
+    // navigation timings
     var timingData = window.performance.timing;
-
     $.each( timingData, function( a, b ) {
       if ( a != 'toJSON' ) {
         timingList += '<li>' + a + ': <span class="value">' + b + '</span></li>';
       }
     });
     $('#nav-timing').html(timingList);
-  });
-
-  $(document).ready(function() {
-    var loadedDom = false;
-    var timeFormat = function(x) {
-      var date = new Date(null);
-      date.setSeconds(x / 1000);
-      date.toISOString().substr(14, 5);
-      return date.toISOString().substr(11, 8);
-    }
-    //check dom load
-    if ( window.performance.timing.domComplete > 1 || 1 == 1 ) {
+    // user timings
       loadedDom = true;
       performance.mark('DOMready');
       //click functions
