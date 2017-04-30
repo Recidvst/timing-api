@@ -48,5 +48,5 @@ try {
   });
 }
 catch (e) {
-return e;
+console.log(e);
 }
