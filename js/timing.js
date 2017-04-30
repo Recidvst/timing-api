@@ -13,8 +13,6 @@ try {
     var initialise = window.performance.timing.navigationStart;
     $.each( timingData, function( a, b ) {
       if ( a != 'toJSON' ) {
-        console.log(b);
-          console.log(b > 0);
         if ( b > 0 ) {
           c = b - initialise;
         }
@@ -50,5 +48,5 @@ try {
   });
 }
 catch (e) {
-console.log(e);
+return e;
 }
