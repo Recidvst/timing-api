@@ -1,0 +1,18 @@
+{
+  "name": "timing-api",
+  "description": "User & Timing experiment",
+  "main": "theatre.js",
+  "authors": [
+    "Recidvst"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Recidvst/timing-api",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}

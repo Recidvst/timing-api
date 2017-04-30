@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="User & Navigation experiment">
+    <meta name="author" content="Recidvst">
+
+    <title>User & Navigation experiment</title>
+
+    <link href="dist/app.min.css" rel="stylesheet">
+  </head>
+
+<body>
+
+  <h1>User and Navigation Timing API</h1>
+
+      <div class="col-xs-12">
+        <h2>Navigation Timing</h2>
+          <ul id="nav-timing">
+          </ul>
+      </div>
+      <div class="col-xs-12">
+        <h2>User Timing</h2>
+          <button id="button1">Press me!</button>
+            <p> Time from load until you pressed this button.. </p>
+            <p id="user-timing1"> </p>
+          <button id="button2">Why not press me too?</button>
+            <p> Time since pressing the first button.. </p>
+            <p id="user-timing2"> </p>
+      </div>
+
+<script src="dist/app.min.js"></script>
+</body>
+</html>
