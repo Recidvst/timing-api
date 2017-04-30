@@ -1,0 +1,96 @@
+$green: #159957;
+$text-grey: #606c71;
+$red: #dc1e1e;
+body {
+  margin: 0;
+  background: rgb(234, 230, 209);
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  .container {
+    background: white;
+    box-shadow: 0px 0px 1px 1px $text-grey;
+  }
+  .container-fluid {
+    background: $green;
+    h1 {
+      color: white;
+    }
+  }
+}
+h1, h2 {
+  color: $green;
+}
+p {
+  color: $text-grey;
+  &#user-timing1, &#user-timing2 {
+    color: $red;
+  }
+}
+ul {
+  color: $text-grey;
+  li {
+    span.value {
+      color: $red;
+      font-style: italic;
+    }
+  }
+  &#user-timing2 {
+    color: $red;
+    list-style-type: none;
+    padding: 0;
+  }
+}
+button {
+  padding: 5px 15px;
+  border-radius: 3px;
+  border: 1px solid black;
+  background: $green;
+  position: relative;
+  &:hover {
+    cursor: pointer;
+    background: #117e47;
+  }
+  &:after {
+    content: '\f021';
+    font-family: FontAwesome;
+    color: $green;
+    right: -20px;
+    position: absolute;
+  }
+  &:nth-child(2) {
+    &:after {
+      content: '\f060';
+      font-family: FontAwesome;
+      color: $green;
+      right: -20px;
+      position: absolute;
+      transition: all 1s ease-in-out;
+    }
+  }
+  &[clickable="false"] {
+    background: $text-grey;
+    cursor: not-allowed;
+    &:after {
+      display: none;
+    }
+  }
+  &[clicked="true"] {
+    &:after {
+      transform: rotateX(180deg);
+    }
+  }
+  &[ready="false"] {
+    background: $text-grey;
+    cursor: not-allowed;
+  }
+  &[ready="true"] {
+    background: $green;
+    cursor: pointer;
+  }
+}
+// Utility
+.text-center {
+  text-align: center;
+}
+.spin180 {
+  transform: rotate(180deg);
+}

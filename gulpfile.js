@@ -13,7 +13,7 @@ var del = require('del');
 var browserSync = require('browser-sync').create();
 
 // Gulp Default tasks
-gulp.task('default', ['check', 'clean', 'sass', 'scripts', 'browser-sync', 'watch']);
+gulp.task('default', ['check', 'clean', 'sass', 'scripts', 'fonts', 'browser-sync', 'watch']);
 
 // Gulp Watch function
 gulp.task('watch', function() {
@@ -26,8 +26,9 @@ gulp.task('watch', function() {
 gulp.task('sass', function() {
   return gulp.src(
     [
-    'scss/*.scss',
-    'bower_components/bootstrap-grid-only/css/grid24.css'
+    'bower_components/bootstrap-grid-only/css/grid24.css',
+    'bower_components/components-font-awesome/css/font-awesome.min.css',
+    'scss/*.scss'
     ])
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', gutil.log))
@@ -55,6 +56,11 @@ gulp.task('scripts', function() {
       .pipe(sourcemaps.write())
       .pipe(gulp.dest('dist'))
       .pipe(browserSync.reload({stream: true}))
+});
+// fonts
+gulp.task('fonts', function() {
+    return gulp.src('bower_components/components-font-awesome/fonts/*')
+    .pipe(gulp.dest('fonts'))    
 });
 // Clear build folder
 gulp.task('clean', function() {

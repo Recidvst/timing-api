@@ -14,7 +14,10 @@
 
 <body>
 
+<div class="container-fluid">
   <h1 class="col-xs-24 text-center">User and Navigation Timing API</h1>
+</div>
+<div class="container">
 
       <div class="col-xs-24 col-sm-12">
         <h2>Navigation Timing</h2>
@@ -26,10 +29,12 @@
           <button id="button1">Press me!</button>
             <p> Time from load until you pressed this button.. </p>
             <p id="user-timing1"> </p>
-          <button id="button2">Why not press me too?</button>
+          <button id="button2" ready="false" clicked="false">Why not press me too?</button>
             <p> Time since pressing the first button.. </p>
-            <p id="user-timing2"> </p>
+            <ul id="user-timing2">
+            </ul>
       </div>
+</div>
 
 <script src="dist/app.min.js"></script>
 </body>
